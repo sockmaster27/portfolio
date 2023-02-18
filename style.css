@@ -119,60 +119,28 @@ body {
 }
 
 @keyframes noise {
-    0% {
-        transform: translate(-12%, -9%);
-    }
-    
-    10% {
-        transform: translate(-7%, -11%);
-    }
-    
-    20% {
-        transform: translate(-12%, -5%);
-    }
-    
-    30% {
-        transform: translate(-5%, -16%);
-    }
-    
-    40% {
-        transform: translate(-19%, -6%);
-    }
-    
-    50% {
-        transform: translate(-5%, -2%);
-    }
-    
-    60% {
-        transform: translate(-14%, -9%);
-    }
-
-    70% {
-        transform: translate(-3%, -0%);
-    }
-    
-    80% {
-        transform: translate(-10%, -1%);
-    }
-    
-    90% {
-        transform: translate(-14%, -15%);
-    }
-    
-    100% {
-        transform: translate(-8%, -1%);
-    }
+    0%   { transform: translate(-12%,  -9%); }
+    10%  { transform: translate( -7%, -11%); }    
+    20%  { transform: translate(-12%,  -5%); }    
+    30%  { transform: translate( -5%, -16%); }    
+    40%  { transform: translate(-19%,  -6%); }    
+    50%  { transform: translate( -5%,  -2%); }    
+    60%  { transform: translate(-14%,  -9%); }
+    70%  { transform: translate( -3%,  -0%); }    
+    80%  { transform: translate(-10%,  -1%); }    
+    90%  { transform: translate(-14%, -15%); }    
+    100% { transform: translate( -8%,  -1%); }
 }
 
 .title-card #noise {
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.2;
     background-image: url(resources/noise.png);
     background-repeat: repeat;
     mix-blend-mode: multiply;
     width: 1000%;
     height: 1000%;
-    animation: noise 9s steps(10) infinite;
+    animation: noise 11s steps(12) infinite;
 
     z-index: 0;
 }
