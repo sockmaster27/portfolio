@@ -101,6 +101,7 @@ body {
 .title-card .contact .github {
     padding-left: 60px;
 }
+
 .title-card .contact .phone {
     padding-right: 60px;
 }
@@ -110,7 +111,8 @@ body {
     max-width: var(--full-width);
 }
 
-.title-card #waves, .title-card #noise {
+.title-card #waves,
+.title-card #noise {
     position: absolute;
 }
 
@@ -121,17 +123,49 @@ body {
 }
 
 @keyframes noise {
-    0%   { transform: translate(-12%,  -9%); }
-    10%  { transform: translate( -7%, -11%); }    
-    20%  { transform: translate(-12%,  -5%); }    
-    30%  { transform: translate( -5%, -16%); }    
-    40%  { transform: translate(-19%,  -6%); }    
-    50%  { transform: translate( -5%,  -2%); }    
-    60%  { transform: translate(-14%,  -9%); }
-    70%  { transform: translate( -3%,  -0%); }    
-    80%  { transform: translate(-10%,  -1%); }    
-    90%  { transform: translate(-14%, -15%); }    
-    100% { transform: translate( -8%,  -1%); }
+    0% {
+        transform: translate(-12%, -9%);
+    }
+
+    10% {
+        transform: translate(-7%, -11%);
+    }
+
+    20% {
+        transform: translate(-12%, -5%);
+    }
+
+    30% {
+        transform: translate(-5%, -16%);
+    }
+
+    40% {
+        transform: translate(-19%, -6%);
+    }
+
+    50% {
+        transform: translate(-5%, -2%);
+    }
+
+    60% {
+        transform: translate(-14%, -9%);
+    }
+
+    70% {
+        transform: translate(-3%, -0%);
+    }
+
+    80% {
+        transform: translate(-10%, -1%);
+    }
+
+    90% {
+        transform: translate(-14%, -15%);
+    }
+
+    100% {
+        transform: translate(-8%, -1%);
+    }
 }
 
 .title-card #noise {
