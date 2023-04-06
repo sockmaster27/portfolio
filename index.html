@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+
     <link rel="icon" type="image/png" href="resources/favicon.png" sizes="16x16">
     <title>Holger Dal Mogensen</title>
     <meta name="description" content="Holger Dal Mogensen portefølje">
@@ -23,15 +24,17 @@
         <div class="contact">
             <div class="github">
                 <ion-icon name="logo-github"></ion-icon>
-                <a href="https://github.com/sockmaster27" target="_blank" rel="noreferrer noopener">sockmaster27</a>
+                <a class="expanding" href="https://github.com/sockmaster27" target="_blank"
+                    rel="noreferrer noopener">sockmaster27</a>
             </div>
             <div class="mail">
-                <ion-icon name="mail-outline"></ion-icon>
-                <a href="mailto:holgermogensen@gmail.com">holgermogensen@gmail.com</a>
+                <ion-icon name="mail"></ion-icon>
+                <a class="expanding" href="mailto:holgermogensen@gmail.com">holgermogensen@gmail.com</a>
             </div>
             <div class="phone">
-                <ion-icon name="call-outline"></ion-icon>
-                <span>22-50-88-62</span>
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <a class="expanding" href="https://www.linkedin.com/in/holgerdal/" target="_blank"
+                    rel="noreferrer noopener">HOLGERDAL</a>
             </div>
         </div>
 
@@ -39,7 +42,62 @@
             <source src="resources/Waves.mp4" type="video/mp4">
         </video>
 
-        <div id="noise"></div>
+        <div class="noise"></div>
+    </div>
+
+    <div class="content">
+        <div class="dentagra">
+            <div>
+                <svg width="230" viewBox="0 0 200 136" xmlns="http://www.w3.org/2000/svg">
+                    <title>Dentagra Logo</title>
+                    <image href="resources/dentagra/char.png" x="99.59" y="148.23" height="100"
+                        transform="rotate(-150 99.5869 148.232)" image-rendering="pixelated" />
+                    <image href="resources/dentagra/title.png" width="200" image-rendering="pixelated" />
+                </svg>
+                <h1>DENTAGRA</h1>
+                <a href="https://github.com/sockmaster27/Dentagra" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                    Se på GitHub</a>
+                <p>Et online-multiplayer-spil lavet over 2 måneder. Skrevet i Python og Godot Engine's GDScript.</p>
+            </div>
+            <div class="details expanding">
+                <h2>Koncept</h2>
+                <p>
+                    Dentagra blev udviklet som et gymnasialt eksamensprojekt ud fra temaet 'online-multiplayer'.
+                    Spillet består principielt af 2 faser:
+                    Builder Mode og Player vs. Player Mode. I Builder Mode kan den enkelte spiller uforstyrret designe
+                    sin fæstning
+                    ud fra de ressourcer de har til rådighed. I PvP Mode dyster 2 spillere mod hinanden om at være den
+                    første til at infiltrere modstanderens base, finde deres flag og bringe det til den sikre zone.
+                    <br>
+                    Med opgavens mål for øje valgte vi at fokusere på PvP-fasen.
+                </p>
+                <h2>Arkitektur</h2>
+                <img width="330px" height="396px" alt="Dentagras arkitektur" src="resources/dentagra/Arkitektur.webp">
+                <p>
+                    Projektet består af 3 dele: Client, Matchmaking Server og Game Server. Client er den brugervendte
+                    frontend. Matchmaking Serveren agerer gateway, og er ansvarlig
+                    for at parre spillere og viderestille dem til en Game Server. De enkelte Game Servere har ansvar for
+                    at facilitere de igangværende matches, som den er blevet tildelt af Matchmaking Serveren.
+                    Systemet kan skaleres op ved at
+                    tilføje flere Game Servere.
+                </p>
+                <h2>Teknologi</h2>
+                <p>
+                    Både Client og Game Server er implementeret i Godot Engine - primært i det Python-lignende GDScript.
+                    Det gjorde det muligt at udnytte det indbyggede RPC-baserede 'High-level multiplayer' system.
+                    <br>
+                    Matchmaking Server er skrevet i Python og kommunikerer igennem WebSocket-Secure protokollen.
+                </p>
+                <div class="video"><iframe width="640" height="360"
+                        src="https://www.youtube-nocookie.com/embed/QUpQFupxGdA" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+
+                <button class="collapse">skjul</button>
+            </div>
+        </div>
     </div>
 </body>
 
