@@ -25,7 +25,8 @@ ion-icon {
     top: 2px;
 }
 
-body {
+body,
+button {
     margin: 0;
     font-family: "Lexend", sans-serif;
 }
@@ -318,4 +319,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.content .collapse {
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    color: #b0b0b0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.content .collapse:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

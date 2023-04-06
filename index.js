@@ -1,25 +1,18 @@
 
 // Selection of sections
-//
-// The 'selected' section is expanded
-let selected = null;
-
-function clearSelection() {
-    selected?.classList.remove("selected");
-    selected = null;
-}
-
 const divs = document.querySelectorAll(".content>div");
 for (const div of divs) {
     div.addEventListener("click", (e) => {
-        e.stopPropagation();
-        clearSelection();
         div.classList.add("selected");
-        selected = div;
+    });
+
+    const collapse = div.querySelector(".collapse");
+    console.log(collapse);
+    collapse.addEventListener("click", (e) => {
+        e.stopPropagation();
+        div.classList.remove("selected");
     });
 }
-
-document.addEventListener("click", clearSelection);
 
 
 
