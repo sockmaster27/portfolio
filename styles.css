@@ -232,8 +232,6 @@ body {
     box-sizing: border-box;
     background-color: #FFFFFF;
     height: fit-content;
-    padding-top: 35px;
-    padding-bottom: 35px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     z-index: 1;
@@ -241,7 +239,7 @@ body {
 
     --extra-pad: 0px;
     /* Minimum margin ↘ */
-    width: calc(100% - (100px - 2 * var(--extra-pad)));
+    width: calc(100% - (30px - 2 * var(--extra-pad)));
     max-width: calc(720px + 2 * var(--extra-pad));
     padding: calc(20px + var(--extra-pad)) calc(40px + var(--extra-pad));
     margin-top: calc(0px - var(--extra-pad));
@@ -269,7 +267,6 @@ body {
 .content>div .details {
     --full-height: 1000px;
     max-height: 0;
-    overflow: hidden;
     transition: max-height 0.5s;
 }
 
