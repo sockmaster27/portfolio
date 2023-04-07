@@ -7,7 +7,6 @@ for (const div of divs) {
     });
 
     const collapse = div.querySelector(".collapse");
-    console.log(collapse);
     collapse.addEventListener("click", (e) => {
         e.stopPropagation();
         div.classList.remove("selected");
