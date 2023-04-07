@@ -25,9 +25,15 @@ ion-icon {
     top: 2px;
 }
 
+body {
+    margin: 0;
+
+    /* Disables blur until the script is run */
+    --dpr: 0;
+}
+
 body,
 button {
-    margin: 0;
     font-family: "Lexend", sans-serif;
 }
 
@@ -55,11 +61,11 @@ button {
 }
 
 .title-card h1 {
-    filter: blur(0.4px);
+    filter: blur(calc(0.5px / var(--dpr)));
 }
 
 .title-card div {
-    filter: blur(0.3px);
+    filter: blur(calc(0.4px / var(--dpr)));
 }
 
 .title-card a {
@@ -212,20 +218,20 @@ button {
     font-weight: 900;
     font-size: 24px;
     margin: 0;
-    filter: blur(0.5px);
+    filter: blur(calc(0.5px / var(--dpr)));
 }
 
 .content h2 {
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 0;
-    filter: blur(0.45px);
+    filter: blur(calc(0.45px / var(--dpr)));
 }
 
 .content a {
     display: inline-block;
     color: #282828;
-    filter: blur(0.45px);
+    filter: blur(calc(0.45px / var(--dpr)));
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -237,7 +243,7 @@ button {
 .content p {
     margin: 0;
     margin-bottom: 20px;
-    filter: blur(0.4px);
+    filter: blur(calc(0.4px / var(--dpr)));
     font-size: 14px;
 }
 

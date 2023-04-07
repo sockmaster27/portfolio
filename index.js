@@ -15,6 +15,17 @@ for (const div of divs) {
 
 
 
+// Letting CSS know the device pixel ratio
+//
+// Used for slight blurring of the text
+const body = document.querySelector("body");
+const windowResizeObserver = new ResizeObserver(() => {
+    body.style.setProperty("--dpr", window.devicePixelRatio);
+});
+windowResizeObserver.observe(body);
+
+
+
 // Expanding stuff
 //
 // The transition 0 -> fit-content isn't supported in CSS, 
