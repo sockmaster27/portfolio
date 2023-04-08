@@ -1,16 +1,41 @@
-
-// Selection of sections
+// Sections
 const divs = document.querySelectorAll(".content>div");
+const divPlayers = new Map();
+let playerId = 0;
+const withYtApi = [];
 for (const div of divs) {
+    // Selection of sections
     div.addEventListener("click", (e) => {
         div.classList.add("selected");
     });
 
+    // Unique IDs for each video
+    const videos = div.querySelectorAll(".video>iframe");
+    const players = [];
+    for (const video of videos) {
+        video.id = playerId++;
+        players.push(video);
+    }
+    divPlayers.set(div, players);
+
+    // Collapsing of sections
     const collapse = div.querySelector(".collapse");
     collapse.addEventListener("click", (e) => {
         e.stopPropagation();
         div.classList.remove("selected");
     });
+
+    // Pausing of videos when collapsing
+    withYtApi.push(() => {
+        const players = divPlayers.get(div)
+            .map((id) => new YT.Player(id, {}));
+        collapse.addEventListener("click", () =>
+            players.forEach(p => p.pauseVideo())
+        );
+    });
+}
+function onYouTubeIframeAPIReady() {
+    withYtApi.forEach(f => f());
 }
 
 
