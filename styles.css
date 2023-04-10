@@ -230,18 +230,22 @@ button {
 }
 
 .content a {
-    display: inline-block;
     color: #282828;
-    filter: blur(calc(0.45px / var(--dpr)));
     font-weight: 600;
-    margin-bottom: 5px;
 }
 
 .content a:hover {
     color: #5e61a3;
 }
 
-.content p {
+.content a.main {
+    display: inline-block;
+    margin-bottom: 5px;
+    filter: blur(calc(0.45px / var(--dpr)));
+}
+
+.content p,
+.content ul {
     margin: 0;
     filter: blur(calc(0.4px / var(--dpr)));
     font-size: 14px;
@@ -264,7 +268,7 @@ button {
     max-width: calc(720px + 2 * var(--extra-pad));
     padding: calc(var(--v-pad) + var(--extra-pad)) calc(var(--h-pad) + var(--extra-pad));
     margin-top: calc(0px - var(--extra-pad));
-    margin-bottom: calc(0px - var(--extra-pad));
+    margin-bottom: calc(50px - var(--extra-pad));
 
     transition:
         box-shadow 0.1s,

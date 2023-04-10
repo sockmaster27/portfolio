@@ -49,14 +49,14 @@
     <div class="content">
         <div class="dentagra">
             <div>
-                <svg width="230" viewBox="0 0 200 136" xmlns="http://www.w3.org/2000/svg">
+                <svg height="150" viewBox="0 0 200 136" xmlns="http://www.w3.org/2000/svg">
                     <title>Dentagra Logo</title>
                     <image href="resources/dentagra/char.png" x="99.59" y="148.23" height="100"
                         transform="rotate(-150 99.5869 148.232)" image-rendering="pixelated" />
                     <image href="resources/dentagra/title.png" width="200" image-rendering="pixelated" />
                 </svg>
                 <h1>DENTAGRA</h1>
-                <a href="https://github.com/sockmaster27/Dentagra" target="_blank">
+                <a class="main" href="https://github.com/sockmaster27/Dentagra" target="_blank">
                     <ion-icon name="logo-github"></ion-icon>
                     Se på GitHub</a>
                 <p>Et online-multiplayer-spil lavet over 2 måneder. Skrevet i Python og Godot Engine's GDScript.</p>
@@ -101,7 +101,58 @@
                 <button class="collapse">skjul</button>
             </div>
         </div>
-    </div>
+
+
+        <div class="chi-squared">
+            <div>
+                <img height=150 width="129" src="resources/chi-squared.svg" alt="χ²">
+                <h1>SHA-256 χ<sup>2</sup></h1>
+                <a class="main" href="https://github.com/sockmaster27/SHA256-Chi-i-anden-test" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                    Se på GitHub</a>
+                <p>χ<sup>2</sup> (Chi-i-anden) analyse af SHA-256-algoritmens output for nærtliggende inputværdier,
+                    skrevet i Python.
+                </p>
+            </div>
+            <div class="details expanding">
+                <h2>Formål</h2>
+                <p>
+                    I forbindelse med SOP (StudioOmrådeProjekt) undersøgte jeg SHA-256, som er en kryptografisk
+                    hashfunktion brugt i alt fra SSL-certifikater til Bitcoin-transaktioner.
+                    <br>
+                    En god kryptografisk hashfunktion er bl.a. karakteriseret ved at den er svær at forudsige, og selv
+                    en lille ændring i inputtet burde resultere i et helt andet output.
+                    <br>
+                    <a href="https://en.wikipedia.org/wiki/Chi-squared_test" target="_blank">χ2-testen</a> kan bruges
+                    til at kvantificere dette, ved at opdele outputværdierne i en række intervaller, og praktisk set
+                    sammenligne antallet i hver kategori med et forventet antal.
+                </p>
+
+                <h2>Implementering</h2>
+                <ul>
+                    <li>
+                        <a href="https://github.com/sockmaster27/SHA256-Chi-i-anden-test/blob/master/compute_hashes.py"
+                            target="_blank">compute_hashes.py</a> står for at beregne SHA-256 hashværdierne for en
+                        række
+                        nærtliggende inputværdier, inddele dem i en hyppighedstabel bestående af 2<sup>16</sup> = 65.536
+                        forskellige intervaller og skrive den til en fil når scriptet afbrydes. Det er yderligere
+                        indrettet til automatisk at fortsætte fra den sidst evaluerede værdi når det startes igen.
+                    </li>
+                    <li>
+                        <a href="https://github.com/sockmaster27/SHA256-Chi-i-anden-test/blob/master/inspector.py"
+                            target="_blank">inspector.py</a>
+                        bruges eventuelt til overfladisk at inspicere dataene.
+                    </li>
+                    <li>
+                        <a href="https://github.com/sockmaster27/SHA256-Chi-i-anden-test/blob/master/chi_square.py"
+                            target="_blank">chi_square.py</a>
+                        analyserer hyppighedstabellens afvigelser og sammenholder dem med den acceptable værdi.
+                    </li>
+                </ul>
+
+                <button class="collapse">skjul</button>
+            </div>
+        </div>
 </body>
 
 </html>
