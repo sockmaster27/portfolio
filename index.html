@@ -103,6 +103,51 @@
         </div>
 
 
+
+        <div class="freyr">
+            <div>
+                <img height="150px" src="resources/freyr.webp" alt="Freyr">
+                <h1>Freyr</h1>
+                <a class="main" href="https://github.com/MikkelHojbjerg/mycstaGOGical" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                    Se på GitHub</a>
+                <p>Vinder af InCommodities' case ved AUHack 2023: Genformidling af information fra en utilregnelig
+                    server. Skrevet i F#.
+                </p>
+            </div>
+            <div class="details expanding">
+                <h2>Case</h2>
+                <!-- embed is used instead of img to allow the svg to reuse freyr.webp -->
+                <embed width="151.283" height="400" src="resources/freyr-vis.svg" />
+                <p>
+                    En server, A, leverer vejrdata fra 5 forskellige steder i Anchorage, Alaska med hver sit end-point.
+                    Dataene
+                    leveres i CSV-format med lokale timestamps. Nyt data udgives hvert minut, men det præcise øjeblik
+                    varierer fra gang til gang, samtidig med at den har et ganske konservativt rate-limit. Serveren er
+                    tilmed utilregnelig, og der er ingen garanti for at dataene er velformaterede.
+                    <br>
+                    Opgaven lyder herpå at udvikle en service, der genformidler disse data ved at sende dem til en
+                    server, B, i et givet JSON-format med UTC-timestamps. Dette skal naturligvis ske så konsekvent som
+                    muligt, med så lav forsinkelse som overhovedet muligt.
+                </p>
+
+                <h2>Polling-strategi</h2>
+                <p>
+                    Vi valgte at tage den ekstra udfordring at implementere vores løsning i F#-sproget uden tidligere
+                    erfaring. Freyr udnytter F#'s async-features til at køre polling'en af hvert end-point på sin egen
+                    selvjusterende timer.
+                    <br>
+                    Timing-strategien er pragmatisk baseret på en analyse af A's opførsel, hvor udgivelsen af nye data
+                    fandtes til at falde indenfor visse trin. På den måde lykkedes det konsekvent at opnå en forsinkelse
+                    på under 600ms - ikke udsædvanligt i nærheden af de 200ms tilsvarende netværksforsinkelsen af en
+                    enkelt request i sig selv.
+                </p>
+
+                <button class="collapse">skjul</button>
+            </div>
+        </div>
+
+
         <div class="chi-squared">
             <div>
                 <img height=150 width="129" src="resources/chi-squared.svg" alt="χ²">

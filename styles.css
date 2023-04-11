@@ -312,7 +312,8 @@ button {
 }
 
 .content svg,
-.content img {
+.content img,
+.content embed {
     box-sizing: border-box;
     max-width: 100%;
     float: right;
