@@ -215,6 +215,7 @@ button {
 }
 
 .content h1 {
+    text-transform: uppercase;
     font-weight: 900;
     font-size: 24px;
     margin: 0;
@@ -314,7 +315,6 @@ button {
 .content img {
     box-sizing: border-box;
     max-width: 100%;
-    height: auto;
     float: right;
     clear: both;
     margin-left: 30px;
@@ -339,7 +339,7 @@ button {
     overflow: hidden;
 }
 
-.content iframe {
+.content .video>iframe {
     position: absolute;
     top: 0;
     left: 0;

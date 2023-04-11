@@ -56,7 +56,7 @@ windowResizeObserver.observe(body);
 // The transition 0 -> fit-content isn't supported in CSS, 
 // so we have to find the corresponding pixel value
 const resizeObserver = new ResizeObserver(entries => {
-    for (e of entries) {
+    for (const e of entries) {
         const el = e.target;
         el.style.setProperty("--full-height", el.scrollHeight + "px");
         el.style.setProperty("--full-width", el.scrollWidth + "px");
@@ -64,6 +64,6 @@ const resizeObserver = new ResizeObserver(entries => {
 });
 
 const expanding = document.querySelectorAll(".expanding");
-for (e of expanding) {
+for (const e of expanding) {
     resizeObserver.observe(e);
 }
