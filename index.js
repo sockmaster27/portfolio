@@ -1,4 +1,11 @@
 // Sections
+function reportOpen(section) {
+    mixpanel.init("0089702639df9b9a90475a33b0f12c88");
+    mixpanel.track("Section opened", {
+        "Section": section,
+    });
+}
+
 const opened = new Set();
 const divs = document.querySelectorAll(".content>div");
 const divPlayers = new Map();
@@ -11,8 +18,7 @@ for (const div of divs) {
 
         if (!opened.has(div)) {
             opened.add(div);
-            const response = await fetch(`/stats/${div.id}`, { method: "POST" });
-            console.log(response);
+            reportOpen(div.id);
         }
     });
 
