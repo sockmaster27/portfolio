@@ -1,8 +1,12 @@
 {
     "scripts": {
-        "start": "npx wrangler pages dev ."
+        "start": "npx wrangler pages dev .",
+        "build": "npm install --omit=dev"
     },
-    "dev-dependencies": {
+    "dependencies": {
+        "mixpanel-browser": "^2.46.0"
+    },
+    "devDependencies": {
         "wrangler": "^2.15.0"
     }
 }

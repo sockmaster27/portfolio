@@ -1,12 +1,19 @@
 // Sections
+const opened = new Set();
 const divs = document.querySelectorAll(".content>div");
 const divPlayers = new Map();
 let playerId = 0;
 const withYtApi = [];
 for (const div of divs) {
     // Selection of sections
-    div.addEventListener("click", (e) => {
+    div.addEventListener("click", async (e) => {
         div.classList.add("selected");
+
+        if (!opened.has(div)) {
+            opened.add(div);
+            const response = await fetch(`/stats/${div.id}`, { method: "POST" });
+            console.log(response);
+        }
     });
 
     // Unique IDs for each video
