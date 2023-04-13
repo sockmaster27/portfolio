@@ -1,5 +1,6 @@
-// Sections
 mixpanel.init("0089702639df9b9a90475a33b0f12c88");
+
+// Sections
 function reportOpen(section) {
     mixpanel.track("Section opened", {
         "Section": section,
@@ -79,4 +80,14 @@ const resizeObserver = new ResizeObserver(entries => {
 const expanding = document.querySelectorAll(".expanding");
 for (const e of expanding) {
     resizeObserver.observe(e);
+}
+
+
+
+// Link tracking
+const links = document.querySelectorAll("a");
+for (const link of links) {
+    const url = link.href;
+    link.id = url;
+    mixpanel.track_links(`#${url}`, "Link clicked", { URL: url });
 }
