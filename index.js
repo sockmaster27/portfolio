@@ -1,6 +1,6 @@
 // Sections
+mixpanel.init("0089702639df9b9a90475a33b0f12c88");
 function reportOpen(section) {
-    mixpanel.init("0089702639df9b9a90475a33b0f12c88");
     mixpanel.track("Section opened", {
         "Section": section,
     });
