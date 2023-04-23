@@ -72,8 +72,18 @@ windowResizeObserver.observe(body);
 const resizeObserver = new ResizeObserver(entries => {
     for (const e of entries) {
         const el = e.target;
-        el.style.setProperty("--full-height", el.scrollHeight + "px");
-        el.style.setProperty("--full-width", el.scrollWidth + "px");
+
+        const style = getComputedStyle(el);
+        const fullHeight = parseInt(style.getPropertyValue("--full-height"));
+        const fullWidth = parseInt(style.getPropertyValue("--full-width"));
+        const h = el.scrollHeight;
+        const w = el.scrollWidth;
+
+        if (1 < Math.abs(fullHeight - h))
+            el.style.setProperty("--full-height", h + "px");
+
+        if (1 < Math.abs(fullWidth - w))
+            el.style.setProperty("--full-width", w + "px");
     }
 });
 
